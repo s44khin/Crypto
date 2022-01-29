@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/colorBackground"
@@ -8,6 +9,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
+        app:layout_scrollFlags="scroll|exitUntilCollapsed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true">
@@ -16,13 +18,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="@string/app_name"
+            app:navigationIcon="@drawable/ic_search"
+            app:menu="@menu/menu_top"
             app:titleCentered="true" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
+            style="@style/Widget.Material3.TabLayout.OnSurface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabMode="scrollable" />
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/defaultPadding"
+            app:tabMode="scrollable"
+            tools:ignore="RtlSymmetry" />
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2

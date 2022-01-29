@@ -12,6 +12,8 @@ class CoinsAdapter(
     private val itemClickHandler: ItemClickHandler
 ) : RecyclerView.Adapter<CoinsAdapter.ViewHolder>() {
 
+    private val checkedCoins = arrayListOf<Int>()
+
     class ViewHolder(binding: ItemCoinBinding) : RecyclerView.ViewHolder(binding.root) {
         val checkBox: CheckBox = binding.checkBox
     }
@@ -21,13 +23,27 @@ class CoinsAdapter(
     )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.checkBox.text = coins[position].name
+        val coin = coins[position]
+
+        holder.checkBox.text = coin.name
+
+        if (coin.id in checkedCoins)
+            holder.checkBox.isChecked = true
+
         holder.checkBox.setOnClickListener {
-            if (holder.checkBox.isChecked)
-                itemClickHandler.onCheck(coins[position])
-            else
-                itemClickHandler.onUnCheck(coins[position])
+            if (holder.checkBox.isChecked) {
+                itemClickHandler.onCheck(coin)
+                checkedCoins += coin.id
+            } else {
+                itemClickHandler.onUnCheck(coin)
+                checkedCoins -= coin.id
+            }
         }
+    }
+
+    override fun onViewRecycled(holder: ViewHolder) {
+        super.onViewRecycled(holder)
+        holder.checkBox.isChecked = false
     }
 
     override fun getItemCount() = coins.size
