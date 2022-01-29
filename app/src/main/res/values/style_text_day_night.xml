@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextDayNight">
+        <item name="android:textColor">@color/textColor</item>
+    </style>
+
+    <style name="TextDayNight.Normal">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="TextDayNight.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextDayNight.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="TextDayNight.Normal.Header">
+        <item name="android:textSize">@dimen/headerSize</item>
+    </style>
+
+    <style name="TextDayNight.Bold.Header">
+        <item name="android:textSize">@dimen/headerSize</item>
+    </style>
+
+    <style name="TextDayNight.Italic.Header">
+        <item name="android:textSize">@dimen/headerSize</item>
+    </style>
+</resources>

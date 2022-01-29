@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Text" />
+
+    <style name="Text.Normal">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Text.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Italic">
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Text.Normal.Header">
+        <item name="android:textSize">@dimen/headerSize</item>
+    </style>
+
+    <style name="Text.Bold.Header">
+        <item name="android:textSize">@dimen/headerSize</item>
+    </style>
+
+    <style name="Text.Italic.Header">
+        <item name="android:textSize">@dimen/headerSize</item>
+    </style>
+</resources>
