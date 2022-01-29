@@ -40,4 +40,6 @@ dependencies {
     implementation(Dependencies.Core.CORE)
     implementation(Dependencies.Core.APP_COMPAT)
     implementation(Dependencies.Core.MATERIAL)
+
+    implementation(Dependencies.ViewBindingPropertyDelegate.CORE)
 }

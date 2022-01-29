@@ -19,4 +19,10 @@ object Dependencies {
         const val APP_COMPAT = "androidx.appcompat:appcompat:$APP_COMPAT_VERSION"
         const val MATERIAL = "com.google.android.material:material:$MATERIAL_VERSION"
     }
+
+    object ViewBindingPropertyDelegate {
+
+        private const val VERSION = "1.5.3"
+        const val CORE = "com.github.kirich1409:viewbindingpropertydelegate-noreflection:$VERSION"
+    }
 }
