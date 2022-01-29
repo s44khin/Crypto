@@ -17,7 +17,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -42,4 +45,7 @@ dependencies {
     implementation(Dependencies.Core.MATERIAL)
 
     implementation(Dependencies.ViewBindingPropertyDelegate.CORE)
+
+    implementation(Dependencies.Navigation.FRAGMENT)
+    implementation(Dependencies.Navigation.UI)
 }

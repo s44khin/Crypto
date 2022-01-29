@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Crypto</string>
+    <string name="wellcome">Wellcome</string>
+    <string name="what_coins">What coins do you want to track?</string>
+    <string name="what_currencies">In what currencies to display?</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
 </resources>

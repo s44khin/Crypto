@@ -2,4 +2,5 @@
 <resources>
     <dimen name="defaultPadding">16dp</dimen>
     <dimen name="headerSize">20sp</dimen>
+    <dimen name="listMarginBetweenItems">10dp</dimen>
 </resources>

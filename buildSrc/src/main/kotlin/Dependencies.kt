@@ -25,4 +25,12 @@ object Dependencies {
         private const val VERSION = "1.5.3"
         const val CORE = "com.github.kirich1409:viewbindingpropertydelegate-noreflection:$VERSION"
     }
+
+    object Navigation {
+
+        private const val VERSION = "2.4.0"
+
+        const val FRAGMENT = "androidx.navigation:navigation-fragment-ktx:$VERSION"
+        const val UI = "androidx.navigation:navigation-ui-ktx:$VERSION"
+    }
 }
