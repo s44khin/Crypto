@@ -5,4 +5,14 @@
     <string name="what_currencies">In what currencies to display?</string>
     <string name="next">Next</string>
     <string name="finish">Finish</string>
+    <string name="bitcoin">Bitcoin</string>
+    <string name="ethereum">Ethereum</string>
+    <string name="terra">Terra</string>
+    <string name="solana">Solana</string>
+    <string name="binance_coin">Binance coin</string>
+    <string name="fantom">Fantom</string>
+    <string name="busd">Busd</string>
+    <string name="cosmos">Cosmos</string>
+    <string name="cardano">Cardano</string>
+    <string name="loading">Loading</string>
 </resources>

@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -48,4 +49,18 @@ dependencies {
 
     implementation(Dependencies.Navigation.FRAGMENT)
     implementation(Dependencies.Navigation.UI)
+
+    implementation(Dependencies.Shimmer.CORE)
+
+    implementation(Dependencies.Network.RETROFIT)
+    implementation(Dependencies.Network.CONVERTER)
+    implementation(Dependencies.Network.OKHTTP)
+    implementation(Dependencies.Network.INTERCEPTOR)
+
+    implementation(Dependencies.Dagger.CORE)
+    kapt(Dependencies.Dagger.COMPILER)
+
+    implementation(Dependencies.Room.CORE)
+    implementation(Dependencies.Room.COROUTINES)
+    kapt(Dependencies.Room.KAPT)
 }

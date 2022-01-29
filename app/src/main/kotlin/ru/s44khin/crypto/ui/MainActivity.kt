@@ -11,6 +11,10 @@ import ru.s44khin.crypto.ui.auth1.AuthFragment1
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
+    companion object {
+        const val SETTINGS = "SETTINGS"
+    }
+
     private val binding by viewBinding(ActivityMainBinding::bind)
 
     override fun onCreate(savedInstanceState: Bundle?) {

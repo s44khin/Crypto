@@ -9,7 +9,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.transition.Hold
 import ru.s44khin.crypto.R
 import ru.s44khin.crypto.databinding.FragmentAuth2Binding
-import ru.s44khin.crypto.ui.MainFragment
+import ru.s44khin.crypto.ui.main.MainFragment
 
 class AuthFragment2 : Fragment(R.layout.fragment_auth2) {
 

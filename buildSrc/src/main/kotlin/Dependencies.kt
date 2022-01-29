@@ -33,4 +33,39 @@ object Dependencies {
         const val FRAGMENT = "androidx.navigation:navigation-fragment-ktx:$VERSION"
         const val UI = "androidx.navigation:navigation-ui-ktx:$VERSION"
     }
+
+    object Shimmer {
+
+        private const val VERSION = "0.5.0"
+        const val CORE = "com.facebook.shimmer:shimmer:$VERSION"
+    }
+
+    object Network {
+
+        private const val RETROFIT_VERSION = "2.9.0"
+        private const val MOSHI_VERSION = "2.4.0"
+        private const val OKHTTP_VERSION = "4.9.3"
+
+        const val RETROFIT = "com.squareup.retrofit2:retrofit:$RETROFIT_VERSION"
+        const val CONVERTER = "com.squareup.retrofit2:converter-moshi:$MOSHI_VERSION"
+        const val OKHTTP = "com.squareup.okhttp3:okhttp:$OKHTTP_VERSION"
+        const val INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:$OKHTTP_VERSION"
+    }
+
+    object Dagger {
+
+        private const val VERSION = "2.40.5"
+
+        const val CORE = "com.google.dagger:dagger:$VERSION"
+        const val COMPILER = "com.google.dagger:dagger-compiler:$VERSION"
+    }
+
+    object Room {
+
+        private const val VERSION = "2.4.1"
+
+        const val CORE = "androidx.room:room-runtime:$VERSION"
+        const val COROUTINES = "androidx.room:room-ktx:$VERSION"
+        const val KAPT = "androidx.room:room-compiler:$VERSION"
+    }
 }
