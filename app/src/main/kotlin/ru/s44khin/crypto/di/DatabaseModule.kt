@@ -19,5 +19,6 @@ object DatabaseModule {
     ).build()
 
     @Provides
-    fun provideDatabase(databaseRoom: DatabaseRoom): CryptoDatabase = CryptoDatabaseImpl(databaseRoom)
+    fun provideDatabase(databaseRoom: DatabaseRoom): CryptoDatabase =
+        CryptoDatabaseImpl(databaseRoom)
 }
