@@ -1,5 +1,5 @@
 <resources>
-    <string name="equals_formatted" formatted="true">%d%s = %f%s</string>
+    <string name="equals_formatted" formatted="true">1 %s = $%.2f</string>
 
     <string name="app_name">Crypto</string>
     <string name="wellcome">Wellcome</string>

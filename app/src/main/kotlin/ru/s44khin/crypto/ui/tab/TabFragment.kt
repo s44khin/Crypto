@@ -9,6 +9,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import ru.s44khin.crypto.R
 import ru.s44khin.crypto.appComponent
 import ru.s44khin.crypto.databinding.FragmentTabBinding
+import kotlin.math.roundToInt
 
 class TabFragment : Fragment(R.layout.fragment_tab) {
 
@@ -40,7 +41,11 @@ class TabFragment : Fragment(R.layout.fragment_tab) {
 
         viewModel.coin.observe(viewLifecycleOwner) { coin ->
             binding.text.text =
-                resources.getString(R.string.equals_formatted, 1, coin.symbol, coin.priceUsd, "$")
+                resources.getString(
+                    R.string.equals_formatted,
+                    coin.symbol,
+                    coin.priceUsd
+                )
         }
     }
 }
