@@ -2,9 +2,9 @@ package ru.s44khin.crypto.data.database
 
 import ru.s44khin.crypto.data.model.Coin
 
-class DatabaseImpl(
+class CoinDatabaseImpl(
     private val databaseRoom: DatabaseRoom
-) : Database {
+) : CoinDatabase {
 
     override suspend fun getAll() = databaseRoom.coinDao().getAll()
 

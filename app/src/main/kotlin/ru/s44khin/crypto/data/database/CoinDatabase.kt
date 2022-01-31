@@ -2,7 +2,7 @@ package ru.s44khin.crypto.data.database
 
 import ru.s44khin.crypto.data.model.Coin
 
-interface Database {
+interface CoinDatabase {
 
     suspend fun getAll(): List<Coin>
 

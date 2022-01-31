@@ -13,7 +13,6 @@ import ru.s44khin.crypto.appComponent
 import ru.s44khin.crypto.data.model.Coin
 import ru.s44khin.crypto.databinding.FragmentMainBinding
 import ru.s44khin.crypto.databinding.FragmentTabBinding
-import ru.s44khin.crypto.ui.MainViewModel
 import ru.s44khin.crypto.ui.main.adapters.PagerAdapter
 
 class MainFragment : Fragment(R.layout.fragment_main) {
@@ -22,21 +21,19 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private val viewModel: MainViewModel by activityViewModels {
         MainViewModel.Factory(
-            requireContext().appComponent.repository,
-            requireContext().appComponent.database
+            database = requireContext().appComponent.database
         )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedElementEnterTransition = MaterialContainerTransform()
-        viewModel.getCoins()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.databaseCoint.observe(viewLifecycleOwner) { coins ->
+        viewModel.usesCoins.observe(viewLifecycleOwner) { coins ->
             initTabs(coins)
         }
     }

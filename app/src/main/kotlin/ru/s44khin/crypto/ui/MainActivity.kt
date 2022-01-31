@@ -8,7 +8,7 @@ import androidx.fragment.app.commit
 import by.kirich1409.viewbindingdelegate.viewBinding
 import ru.s44khin.crypto.R
 import ru.s44khin.crypto.databinding.ActivityMainBinding
-import ru.s44khin.crypto.ui.auth1.AuthFragment1
+import ru.s44khin.crypto.ui.auth1.Auth1Fragment
 import ru.s44khin.crypto.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                 if (sharedPreferences.contains(START))
                     add(binding.rootContainer.id, MainFragment())
                 else
-                    add(binding.rootContainer.id, AuthFragment1())
+                    add(binding.rootContainer.id, Auth1Fragment())
             }
         }
     }
