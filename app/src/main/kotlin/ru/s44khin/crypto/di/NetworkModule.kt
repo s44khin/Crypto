@@ -2,6 +2,7 @@ package ru.s44khin.crypto.di
 
 import dagger.Module
 import dagger.Provides
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,13 +12,22 @@ import ru.s44khin.crypto.data.network.CoinRepository
 import ru.s44khin.crypto.data.network.CoinRepositoryImpl
 import ru.s44khin.crypto.data.network.CoinService
 
-internal const val SERVER = "https://pro-api.coinmarketcap.com/"
+internal const val SERVER = "https://api.coincap.io/v2/"
 
 @Module
 object NetworkModule {
 
     @Provides
-    fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
+    fun provideHttpNetworkInterceptor() = Interceptor { chain ->
+        val request = chain.request().newBuilder()
+            .addHeader("Authorization", "Bearer $API_KEY")
+            .build()
+
+        chain.proceed(request)
+    }
+
+    @Provides
+    fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
 
@@ -26,18 +36,13 @@ object NetworkModule {
 
     @Provides
     fun provideCoinService(
+        httpNetworkInterceptor: Interceptor,
         httpLoggingInterceptor: HttpLoggingInterceptor,
         moshiConverterFactory: MoshiConverterFactory
     ): CoinService {
-        val okHttpClient = OkHttpClient.Builder().apply {
-            authenticator { _, response ->
-                response.request.newBuilder()
-                    .header("X-CMC_PRO_API_KEY", API_KEY)
-                    .build()
-            }
-
-            addInterceptor(httpLoggingInterceptor)
-        }
+        val okHttpClient = OkHttpClient.Builder()
+            .addInterceptor(httpNetworkInterceptor)
+            .addNetworkInterceptor(httpLoggingInterceptor)
 
         val retrofitClient = Retrofit.Builder().apply {
             baseUrl(SERVER)

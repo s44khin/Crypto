@@ -22,6 +22,11 @@ import ru.s44khin.crypto.ui.auth2.Auth2Fragment
 
 class Auth1Fragment : Fragment(R.layout.fragment_auth1), ItemClickHandler {
 
+    companion object {
+
+        fun newInstance() = Auth1Fragment()
+    }
+
     private val binding by viewBinding(FragmentAuth1Binding::bind)
 
     private val viewModel: Auth1ViewModel by viewModels {
@@ -48,7 +53,7 @@ class Auth1Fragment : Fragment(R.layout.fragment_auth1), ItemClickHandler {
             viewModel.insertUsesCoins(coins)
             parentFragmentManager.commit {
                 addSharedElement(binding.next, binding.next.transitionName)
-                replace(R.id.rootContainer, Auth2Fragment())
+                replace(R.id.rootContainer, Auth2Fragment.newInstance())
             }
         }
 

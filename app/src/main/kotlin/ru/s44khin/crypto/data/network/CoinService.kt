@@ -2,10 +2,17 @@ package ru.s44khin.crypto.data.network
 
 import retrofit2.Response
 import retrofit2.http.GET
-import ru.s44khin.crypto.data.model.BaseResponse
+import retrofit2.http.Path
+import ru.s44khin.crypto.data.model.BaseCoinResponse
+import ru.s44khin.crypto.data.model.BaseCoinsResponse
 
 interface CoinService {
 
-    @GET("v1/cryptocurrency/map?limit=100&sort=cmc_rank")
-    suspend fun getListOfCoins(): Response<BaseResponse>
+    @GET("assets")
+    suspend fun getListOfCoins(): Response<BaseCoinsResponse>
+
+    @GET("assets/{id}")
+    suspend fun getCoin(
+        @Path("id") id: String
+    ): Response<BaseCoinResponse>
 }

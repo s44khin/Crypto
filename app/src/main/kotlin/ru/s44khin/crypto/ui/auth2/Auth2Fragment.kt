@@ -24,6 +24,11 @@ import ru.s44khin.crypto.ui.main.MainFragment
 
 class Auth2Fragment : Fragment(R.layout.fragment_auth2), ItemClickHandler {
 
+    companion object {
+
+        fun newInstance() = Auth2Fragment()
+    }
+
     private val binding by viewBinding(FragmentAuth2Binding::bind)
 
     private val viewModel: Auth2ViewModel by viewModels {

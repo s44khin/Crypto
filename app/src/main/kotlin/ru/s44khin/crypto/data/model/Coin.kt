@@ -11,7 +11,7 @@ data class Coin(
     @PrimaryKey
     @ColumnInfo(name = "id")
     @field:Json(name = "id")
-    val id: Int,
+    val id: String,
 
     @ColumnInfo(name = "name")
     @field:Json(name = "name")
@@ -23,5 +23,9 @@ data class Coin(
 
     @ColumnInfo(name = "rank")
     @field:Json(name = "rank")
-    val rank: Int
+    val rank: Int,
+
+    @ColumnInfo(name = "priceUsd")
+    @field:Json(name = "priceUsd")
+    val priceUsd: Double
 )

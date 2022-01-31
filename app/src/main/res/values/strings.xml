@@ -1,9 +1,5 @@
 <resources>
-    <string-array name="currency">
-        <item>USD\%\2781</item>
-        <item>RUB\%\2790</item>
-        <item>EUR\%\3566</item>
-    </string-array>
+    <string name="equals_formatted" formatted="true">%d%s = %f%s</string>
 
     <string name="app_name">Crypto</string>
     <string name="wellcome">Wellcome</string>

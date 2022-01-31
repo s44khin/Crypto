@@ -5,4 +5,6 @@ class CoinRepositoryImpl(
 ) : CoinRepository {
 
     override suspend fun getListOfCoins() = service.getListOfCoins()
+
+    override suspend fun getCoin(id: String) = service.getCoin(id)
 }

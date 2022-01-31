@@ -12,7 +12,7 @@ class CoinsAdapter(
     private val itemClickHandler: ItemClickHandler
 ) : RecyclerView.Adapter<CoinsAdapter.ViewHolder>() {
 
-    private val checkedCoins = arrayListOf<Int>()
+    private val checkedCoins = arrayListOf<String>()
 
     class ViewHolder(binding: ItemCoinBinding) : RecyclerView.ViewHolder(binding.root) {
         val checkBox: CheckBox = binding.checkBox

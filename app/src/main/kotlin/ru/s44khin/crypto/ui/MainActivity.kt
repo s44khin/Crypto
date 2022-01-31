@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 if (sharedPreferences.contains(START))
-                    add(binding.rootContainer.id, MainFragment())
+                    add(binding.rootContainer.id, MainFragment.newInstance())
                 else
-                    add(binding.rootContainer.id, Auth1Fragment())
+                    add(binding.rootContainer.id, Auth1Fragment.newInstance())
             }
         }
     }
