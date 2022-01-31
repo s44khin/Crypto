@@ -7,12 +7,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import ru.s44khin.crypto.data.database.CoinDatabase
+import ru.s44khin.crypto.data.database.CryptoDatabase
 import ru.s44khin.crypto.data.model.Coin
 import ru.s44khin.crypto.utils.mutableLiveDataOf
 
 class MainViewModel(
-    private val database: CoinDatabase
+    private val database: CryptoDatabase
 ) : ViewModel() {
 
     private val _usesCoins = mutableLiveDataOf<List<Coin>>()
@@ -23,7 +23,7 @@ class MainViewModel(
     }
 
     private fun getUsesCoins() = CoroutineScope(Dispatchers.IO).launch {
-        val result = database.getAll()
+        val result = database.getAllCoins()
 
         withContext(Dispatchers.Main) {
             _usesCoins.value = result
@@ -31,7 +31,7 @@ class MainViewModel(
     }
 
     class Factory(
-        private val database: CoinDatabase
+        private val database: CryptoDatabase
     ) : ViewModelProvider.Factory {
 
         @Suppress("UNCHECKED_CAST")

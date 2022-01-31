@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 
-@Entity
+@Entity(tableName = "Coin")
 data class Coin(
 
     @PrimaryKey
@@ -25,5 +25,3 @@ data class Coin(
     @field:Json(name = "rank")
     val rank: Int
 )
-
-//internal operator fun ArrayList<Coin>.plus()

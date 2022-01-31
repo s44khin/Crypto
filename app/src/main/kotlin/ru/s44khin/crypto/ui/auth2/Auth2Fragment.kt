@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.google.android.material.transition.Hold
 import ru.s44khin.crypto.R
+import ru.s44khin.crypto.appComponent
 import ru.s44khin.crypto.data.model.Currency
 import ru.s44khin.crypto.databinding.FragmentAuth2Binding
 import ru.s44khin.crypto.ui.MainActivity
@@ -22,7 +23,11 @@ class Auth2Fragment : Fragment(R.layout.fragment_auth2), ItemClickHandler {
 
     private val binding by viewBinding(FragmentAuth2Binding::bind)
 
-    private val viewModel: Auth2ViewModel by viewModels()
+    private val viewModel: Auth2ViewModel by viewModels {
+        Auth2ViewModel.Factory(
+            database = requireContext().appComponent.database
+        )
+    }
 
     private val sharedPreferences by lazy {
         requireActivity().getSharedPreferences(MainActivity.SETTINGS, Context.MODE_PRIVATE)
@@ -49,6 +54,7 @@ class Auth2Fragment : Fragment(R.layout.fragment_auth2), ItemClickHandler {
         initObservable()
 
         binding.next.setOnClickListener {
+            viewModel.insertUsesCurrencies(currencies)
             parentFragmentManager.commit {
                 sharedPreferences.edit().putBoolean(MainActivity.START, true).apply()
                 addSharedElement(binding.next, binding.next.transitionName)

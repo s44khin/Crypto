@@ -7,14 +7,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import ru.s44khin.crypto.data.database.CoinDatabase
+import ru.s44khin.crypto.data.database.CryptoDatabase
 import ru.s44khin.crypto.data.model.Coin
 import ru.s44khin.crypto.data.network.CoinRepository
 import ru.s44khin.crypto.utils.mutableLiveDataOf
 
 class Auth1ViewModel(
     private val repository: CoinRepository,
-    private val database: CoinDatabase
+    private val database: CryptoDatabase
 ) : ViewModel() {
 
     private val _coins = mutableLiveDataOf<List<Coin>>()
@@ -35,12 +35,12 @@ class Auth1ViewModel(
     }
 
     fun insertUsesCoins(coins: List<Coin>) = CoroutineScope(Dispatchers.IO).launch {
-        database.insertAll(coins)
+        database.insertAllCoins(coins)
     }
 
     class Factory(
         private val repository: CoinRepository,
-        private val database: CoinDatabase
+        private val database: CryptoDatabase
     ) : ViewModelProvider.Factory {
 
         @Suppress("UNCHECKED_CAST")

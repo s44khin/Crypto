@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
-import ru.s44khin.crypto.data.database.CoinDatabase
-import ru.s44khin.crypto.data.database.CoinDatabaseImpl
+import ru.s44khin.crypto.data.database.CryptoDatabase
+import ru.s44khin.crypto.data.database.CryptoDatabaseImpl
 import ru.s44khin.crypto.data.database.DatabaseRoom
 
 @Module
@@ -19,5 +19,5 @@ object DatabaseModule {
     ).build()
 
     @Provides
-    fun provideDatabase(databaseRoom: DatabaseRoom): CoinDatabase = CoinDatabaseImpl(databaseRoom)
+    fun provideDatabase(databaseRoom: DatabaseRoom): CryptoDatabase = CryptoDatabaseImpl(databaseRoom)
 }
