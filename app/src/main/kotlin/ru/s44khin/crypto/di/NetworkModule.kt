@@ -43,10 +43,11 @@ object NetworkModule {
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(httpNetworkInterceptor)
             .addNetworkInterceptor(httpLoggingInterceptor)
+            .build()
 
         val retrofitClient = Retrofit.Builder().apply {
             baseUrl(SERVER)
-            client(okHttpClient.build())
+            client(okHttpClient)
             addConverterFactory(moshiConverterFactory)
         }
 

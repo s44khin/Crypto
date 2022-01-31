@@ -1,4 +1,4 @@
-package ru.s44khin.crypto.ui.auth1
+package ru.s44khin.crypto.ui.auth
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -12,7 +12,7 @@ import ru.s44khin.crypto.data.model.Coin
 import ru.s44khin.crypto.data.network.CoinRepository
 import ru.s44khin.crypto.utils.mutableLiveDataOf
 
-class Auth1ViewModel(
+class AuthViewModel(
     private val repository: CoinRepository,
     private val database: CryptoDatabase
 ) : ViewModel() {
@@ -45,8 +45,8 @@ class Auth1ViewModel(
 
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            require(modelClass.isAssignableFrom(Auth1ViewModel::class.java))
-            return Auth1ViewModel(repository, database) as T
+            require(modelClass.isAssignableFrom(AuthViewModel::class.java))
+            return AuthViewModel(repository, database) as T
         }
     }
 }

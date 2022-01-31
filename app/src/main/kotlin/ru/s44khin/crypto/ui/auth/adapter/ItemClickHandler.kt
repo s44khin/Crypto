@@ -1,4 +1,4 @@
-package ru.s44khin.crypto.ui.auth1.adapter
+package ru.s44khin.crypto.ui.auth.adapter
 
 import ru.s44khin.crypto.data.model.Coin
 

@@ -1,7 +1,7 @@
-package ru.s44khin.crypto.ui.auth1
+package ru.s44khin.crypto.ui.auth
 
+import android.content.Context
 import android.os.Bundle
-import android.transition.TransitionInflater
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
@@ -11,29 +11,35 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.google.android.material.transition.Hold
 import ru.s44khin.crypto.R
 import ru.s44khin.crypto.appComponent
 import ru.s44khin.crypto.data.model.Coin
-import ru.s44khin.crypto.databinding.FragmentAuth1Binding
-import ru.s44khin.crypto.ui.auth1.adapter.CoinsAdapter
-import ru.s44khin.crypto.ui.auth1.adapter.CoinsDiffUtilCallback
-import ru.s44khin.crypto.ui.auth1.adapter.ItemClickHandler
-import ru.s44khin.crypto.ui.auth2.Auth2Fragment
+import ru.s44khin.crypto.databinding.FragmentAuthBinding
+import ru.s44khin.crypto.ui.MainActivity
+import ru.s44khin.crypto.ui.auth.adapter.CoinsAdapter
+import ru.s44khin.crypto.ui.auth.adapter.CoinsDiffUtilCallback
+import ru.s44khin.crypto.ui.auth.adapter.ItemClickHandler
+import ru.s44khin.crypto.ui.main.MainFragment
 
-class Auth1Fragment : Fragment(R.layout.fragment_auth1), ItemClickHandler {
+class AuthFragment : Fragment(R.layout.fragment_auth), ItemClickHandler {
 
     companion object {
 
-        fun newInstance() = Auth1Fragment()
+        fun newInstance() = AuthFragment()
     }
 
-    private val binding by viewBinding(FragmentAuth1Binding::bind)
+    private val binding by viewBinding(FragmentAuthBinding::bind)
 
-    private val viewModel: Auth1ViewModel by viewModels {
-        Auth1ViewModel.Factory(
+    private val viewModel: AuthViewModel by viewModels {
+        AuthViewModel.Factory(
             repository = requireContext().appComponent.repository,
             database = requireContext().appComponent.database
         )
+    }
+
+    private val sharedPreferences by lazy {
+        requireActivity().getSharedPreferences(MainActivity.SETTINGS, Context.MODE_PRIVATE)
     }
 
     private var coins = ArrayList<Coin>()
@@ -52,13 +58,13 @@ class Auth1Fragment : Fragment(R.layout.fragment_auth1), ItemClickHandler {
         binding.next.setOnClickListener {
             viewModel.insertUsesCoins(coins)
             parentFragmentManager.commit {
+                sharedPreferences.edit().putBoolean(MainActivity.START, true).apply()
                 addSharedElement(binding.next, binding.next.transitionName)
-                replace(R.id.rootContainer, Auth2Fragment.newInstance())
+                replace(R.id.rootContainer, MainFragment())
             }
         }
 
-        exitTransition = TransitionInflater.from(requireContext())
-            .inflateTransition(R.transition.fade)
+        exitTransition = Hold()
 
         initObserver()
         initSearch()

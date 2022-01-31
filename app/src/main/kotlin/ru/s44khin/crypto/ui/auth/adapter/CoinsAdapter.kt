@@ -1,18 +1,18 @@
-package ru.s44khin.crypto.ui.auth2.adapter
+package ru.s44khin.crypto.ui.auth.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
-import ru.s44khin.crypto.data.model.Currency
+import ru.s44khin.crypto.data.model.Coin
 import ru.s44khin.crypto.databinding.ItemCoinBinding
 
-class CurrenciesAdapter(
-    internal var currencies: List<Currency> = emptyList(),
+class CoinsAdapter(
+    internal var coins: List<Coin> = emptyList(),
     private val itemClickHandler: ItemClickHandler
-) : RecyclerView.Adapter<CurrenciesAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<CoinsAdapter.ViewHolder>() {
 
-    private val checkedCoins = arrayListOf<Int>()
+    private val checkedCoins = arrayListOf<String>()
 
     class ViewHolder(binding: ItemCoinBinding) : RecyclerView.ViewHolder(binding.root) {
         val checkBox: CheckBox = binding.checkBox
@@ -23,20 +23,20 @@ class CurrenciesAdapter(
     )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currency = currencies[position]
+        val coin = coins[position]
 
-        holder.checkBox.text = currency.code
+        holder.checkBox.text = coin.name
 
-        if (currency.id in checkedCoins)
+        if (coin.id in checkedCoins)
             holder.checkBox.isChecked = true
 
         holder.checkBox.setOnClickListener {
             if (holder.checkBox.isChecked) {
-                itemClickHandler.onCheck(currency)
-                checkedCoins += currency.id
+                itemClickHandler.onCheck(coin)
+                checkedCoins += coin.id
             } else {
-                itemClickHandler.onUnCheck(currency)
-                checkedCoins -= currency.id
+                itemClickHandler.onUnCheck(coin)
+                checkedCoins -= coin.id
             }
         }
     }
@@ -46,5 +46,5 @@ class CurrenciesAdapter(
         holder.checkBox.isChecked = false
     }
 
-    override fun getItemCount() = currencies.size
+    override fun getItemCount() = coins.size
 }
