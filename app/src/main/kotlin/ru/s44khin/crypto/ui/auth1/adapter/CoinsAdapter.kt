@@ -8,7 +8,7 @@ import ru.s44khin.crypto.data.model.Coin
 import ru.s44khin.crypto.databinding.ItemCoinBinding
 
 class CoinsAdapter(
-    private val coins: List<Coin> = emptyList(),
+    internal var coins: List<Coin> = emptyList(),
     private val itemClickHandler: ItemClickHandler
 ) : RecyclerView.Adapter<CoinsAdapter.ViewHolder>() {
 

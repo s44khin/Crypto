@@ -9,8 +9,368 @@
       "id": 3526
     },
     {
+      "code": "DZD",
+      "id": 3537
+    },
+    {
+      "code": "ARS",
+      "id": 2821
+    },
+    {
+      "code": "AMD",
+      "id": 3527
+    },
+    {
+      "code": "AUD",
+      "id": 2782
+    },
+    {
+      "code": "AZN",
+      "id": 3528
+    },
+    {
+      "code": "BHD",
+      "id": 3531
+    },
+    {
+      "code": "BDT",
+      "id": 3530
+    },
+    {
+      "code": "BYN",
+      "id": 3533
+    },
+    {
+      "code": "BMD",
+      "id": 3532
+    },
+    {
+      "code": "BOB",
+      "id": 2832
+    },
+    {
+      "code": "BAM",
+      "id": 3529
+    },
+    {
+      "code": "BRL",
+      "id": 2783
+    },
+    {
+      "code": "BGN",
+      "id": 2814
+    },
+    {
+      "code": "KHR",
+      "id": 3549
+    },
+    {
+      "code": "CAD",
+      "id": 2784
+    },
+    {
+      "code": "CLP",
+      "id": 2786
+    },
+    {
+      "code": "CNY",
+      "id": 2787
+    },
+    {
+      "code": "COP",
+      "id": 2820
+    },
+    {
+      "code": "CRC",
+      "id": 3534
+    },
+    {
+      "code": "HRK",
+      "id": 2815
+    },
+    {
+      "code": "CUP",
+      "id": 3535
+    },
+    {
+      "code": "CZK",
+      "id": 2788
+    },
+    {
+      "code": "DKK",
+      "id": 2789
+    },
+    {
+      "code": "DOP",
+      "id": 3536
+    },
+    {
+      "code": "EGP",
+      "id": 3538
+    },
+    {
+      "code": "EUR",
+      "id": 2790
+    },
+    {
+      "code": "GEL",
+      "id": 3539
+    },
+    {
+      "code": "GHS",
+      "id": 3540
+    },
+    {
+      "code": "GTQ",
+      "id": 3541
+    },
+    {
+      "code": "HNL",
+      "id": 3542
+    },
+    {
+      "code": "HKD",
+      "id": 2792
+    },
+    {
+      "code": "HUF",
+      "id": 2793
+    },
+    {
+      "code": "ISK",
+      "id": 2818
+    },
+    {
+      "code": "INR",
+      "id": 2796
+    },
+    {
+      "code": "IDR",
+      "id": 2794
+    },
+    {
+      "code": "IRR",
+      "id": 3544
+    },
+    {
+      "code": "IQD",
+      "id": 3543
+    },
+    {
+      "code": "ILS",
+      "id": 2795
+    },
+    {
+      "code": "JMD",
+      "id": 3545
+    },
+    {
+      "code": "JPY",
+      "id": 2797
+    },
+    {
+      "code": "JOD",
+      "id": 3546
+    },
+    {
+      "code": "KZT",
+      "id": 3551
+    },
+    {
+      "code": "KES",
+      "id": 3547
+    },
+    {
+      "code": "KWD",
+      "id": 3550
+    },
+    {
+      "code": "KGS",
+      "id": 3548
+    },
+    {
+      "code": "LBP",
+      "id": 3552
+    },
+    {
+      "code": "MKD",
+      "id": 3556
+    },
+    {
+      "code": "MYR",
+      "id": 2800
+    },
+    {
+      "code": "MUR",
+      "id": 2816
+    },
+    {
+      "code": "MXN",
+      "id": 2799
+    },
+    {
+      "code": "MDL",
+      "id": 3555
+    },
+    {
+      "code": "MNT",
+      "id": 3558
+    },
+    {
+      "code": "MAD",
+      "id": 3554
+    },
+    {
+      "code": "MMK",
+      "id": 3557
+    },
+    {
+      "code": "NAD",
+      "id": 3559
+    },
+    {
+      "code": "NPR",
+      "id": 3561
+    },
+    {
+      "code": "TWD",
+      "id": 2811
+    },
+    {
+      "code": "NZD",
+      "id": 2802
+    },
+    {
+      "code": "NIO",
+      "id": 3560
+    },
+    {
+      "code": "NGN",
+      "id": 2819
+    },
+    {
+      "code": "NOK",
+      "id": 2801
+    },
+    {
+      "code": "OMR",
+      "id": 3562
+    },
+    {
+      "code": "PKR",
+      "id": 2804
+    },
+    {
+      "code": "PAB",
+      "id": 3563
+    },
+    {
+      "code": "PEN",
+      "id": 2822
+    },
+    {
+      "code": "PHP",
+      "id": 2803
+    },
+    {
+      "code": "PLN",
+      "id": 2805
+    },
+    {
+      "code": "GBP",
+      "id": 2791
+    },
+    {
+      "code": "QAR",
+      "id": 3564
+    },
+    {
+      "code": "RON",
+      "id": 2817
+    },
+    {
       "code": "RUB",
       "id": 2806
+    },
+    {
+      "code": "SAR",
+      "id": 3566
+    },
+    {
+      "code": "RSD",
+      "id": 3565
+    },
+    {
+      "code": "SGD",
+      "id": 2808
+    },
+    {
+      "code": "ZAR",
+      "id": 2812
+    },
+    {
+      "code": "KRW",
+      "id": 2798
+    },
+    {
+      "code": "SSP",
+      "id": 3567
+    },
+    {
+      "code": "VES",
+      "id": 3573
+    },
+    {
+      "code": "LKR",
+      "id": 3553
+    },
+    {
+      "code": "SEK",
+      "id": 2807
+    },
+    {
+      "code": "CHF",
+      "id": 2785
+    },
+    {
+      "code": "THB",
+      "id": 2809
+    },
+    {
+      "code": "TTD",
+      "id": 3569
+    },
+    {
+      "code": "TND",
+      "id": 3568
+    },
+    {
+      "code": "TRY",
+      "id": 2810
+    },
+    {
+      "code": "UGX",
+      "id": 3570
+    },
+    {
+      "code": "UAH",
+      "id": 2824
+    },
+    {
+      "code": "AED",
+      "id": 2813
+    },
+    {
+      "code": "UYU",
+      "id": 3571
+    },
+    {
+      "code": "UZS",
+      "id": 3572
+    },
+    {
+      "code": "VND",
+      "id": 2823
     }
   ]
 }
