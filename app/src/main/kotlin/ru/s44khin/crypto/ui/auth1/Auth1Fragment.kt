@@ -15,7 +15,7 @@ import ru.s44khin.crypto.data.model.Coin
 import ru.s44khin.crypto.databinding.FragmentAuth1Binding
 import ru.s44khin.crypto.ui.auth1.adapter.CoinsAdapter
 import ru.s44khin.crypto.ui.auth1.adapter.ItemClickHandler
-import ru.s44khin.crypto.ui.auth2.AuthFragment2
+import ru.s44khin.crypto.ui.auth2.Auth2Fragment
 
 class Auth1Fragment : Fragment(R.layout.fragment_auth1), ItemClickHandler {
 
@@ -39,7 +39,7 @@ class Auth1Fragment : Fragment(R.layout.fragment_auth1), ItemClickHandler {
             viewModel.insertUsesCoins(coins)
             parentFragmentManager.commit {
                 addSharedElement(binding.next, binding.next.transitionName)
-                replace(R.id.rootContainer, AuthFragment2())
+                replace(R.id.rootContainer, Auth2Fragment())
             }
         }
 

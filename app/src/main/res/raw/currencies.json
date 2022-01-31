@@ -1,0 +1,16 @@
+{
+  "currencies": [
+    {
+      "code": "USD",
+      "id": 2781
+    },
+    {
+      "code": "ALL",
+      "id": 3526
+    },
+    {
+      "code": "RUB",
+      "id": 2806
+    }
+  ]
+}

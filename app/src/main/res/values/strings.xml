@@ -4,7 +4,7 @@
         <item>RUB\%\2790</item>
         <item>EUR\%\3566</item>
     </string-array>
-    
+
     <string name="app_name">Crypto</string>
     <string name="wellcome">Wellcome</string>
     <string name="what_coins">What coins do you want to track?</string>
